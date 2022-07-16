@@ -18,6 +18,10 @@
     text-decoration: line-through;
 }
 
-form.button_to {
+form {
     display: inline;
+}
+
+.hidden {
+    display: none;
 }

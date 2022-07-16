@@ -1,0 +1,7 @@
+<span class="hidden" data-task-target="edit">
+  <%= form_with(model: task) do |form| %>
+    <%= form.text_field :name %>
+    <%= form.submit %>
+  <% end %>
+  <%= button_tag "Cancel", type: "button", "data-action" => "click->task#cancelEdit" %>
+</span>
