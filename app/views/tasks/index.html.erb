@@ -7,7 +7,8 @@
   <% @todo_tasks.each do |task| %>
     <li>
       <%= render task %>
-      <%= button_to "X", task, method: :delete, class: "task-delete" %>
+      <%= button_to "✅", task, method: :patch, params: { task: { done: true } } %>
+      <%= button_to "❌", task, method: :delete, class: "task-delete" %>
     </li>
   <% end %>
 </ul>
@@ -18,7 +19,8 @@
   <% @completed_tasks.each do |task| %>
     <li>
       <%= render task %>
-      <%= button_to "X", task, method: :delete, class: "task-delete" %>
+      <%= button_to "🚫", task, method: :patch, params: { task: { done: false } } %>
+      <%= button_to "❌", task, method: :delete, class: "task-delete" %>
     </li>
   <% end %>
 </ul>
