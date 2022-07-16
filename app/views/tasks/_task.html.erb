@@ -1,12 +1,3 @@
-<div id="<%= dom_id task %>">
-  <p>
-    <strong>Name:</strong>
-    <%= task.name %>
-  </p>
-
-  <p>
-    <strong>Done:</strong>
-    <%= task.done %>
-  </p>
-
-</div>
+<span id="<%= dom_id task %>" class="task <%= 'done' if task.done %>">
+  <%= task.name %>
+</span>
