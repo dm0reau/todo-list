@@ -2,7 +2,7 @@
 
 <ul id="tasks">
   <li>
-    <%= render "tasks/form", { task: Task.new } %>
+    <%= render "form", task: Task.new %>
   </li>
   <% @todo_tasks.each do |task| %>
     <li>
