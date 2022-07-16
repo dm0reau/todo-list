@@ -4,31 +4,11 @@
   <li>
     <%= render "form", task: Task.new %>
   </li>
-  <% @todo_tasks.each do |task| %>
-    <li data-controller="task">
-      <%= render "edit_form", task: task %>
-      <span data-task-target="show">
-        <%= render task %>
-        <%= button_to "✅", task, method: :patch, params: { task: { done: true } } %>
-        <%= button_tag "📝", type: "button", "data-action" => "click->task#edit" %>
-        <%= button_to "❌", task, method: :delete, class: "task-delete" %>
-      </span>
-    </li>
-  <% end %>
+  <%= render partial: "tasks/todo_task", collection: @todo_tasks %>
 </ul>
 
 <h3>Completed</h3>
 
 <ul id="tasks" data-controller="task">
-  <% @completed_tasks.each do |task| %>
-    <li data-controller="task">
-      <%= render "edit_form", task: task %>
-      <span data-task-target="show">
-        <%= render task %>
-        <%= button_to "🚫", task, method: :patch, params: { task: { done: false } } %>
-        <%= button_tag "📝", type: "button", "data-action" => "click->task#edit" %>
-        <%= button_to "❌", task, method: :delete, class: "task-delete" %>
-      </span>
-    </li>
-  <% end %>
+  <%= render partial: "tasks/completed_task", collection: @completed_tasks %>
 </ul>

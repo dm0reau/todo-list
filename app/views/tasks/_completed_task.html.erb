@@ -1,0 +1,9 @@
+<li data-controller="task">
+  <%= render "edit_form", task: completed_task %>
+  <span data-task-target="show">
+    <%= render completed_task %>
+    <%= button_to "🚫", completed_task, method: :patch, params: { task: { done: false } } %>
+    <%= button_tag "📝", type: "button", "data-action" => "click->task#edit" %>
+    <%= button_to "❌", completed_task, method: :delete, class: "task-delete" %>
+  </span>
+</li>
