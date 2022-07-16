@@ -17,3 +17,7 @@
 .task.done {
     text-decoration: line-through;
 }
+
+form.button_to {
+    display: inline;
+}
