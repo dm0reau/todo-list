@@ -1,7 +1,12 @@
 require "test_helper"
 
 class TaskTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  setup do
+    @task = Task.new(name: "Dummy")
+  end
+
+  test "must have a name" do
+    @task.name = ""
+    assert_not @task.valid?
+  end
 end
